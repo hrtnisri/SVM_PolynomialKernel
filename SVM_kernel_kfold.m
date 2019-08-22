@@ -1,7 +1,7 @@
 clear all
 clc
 
-%$ import dataset
+% import dataset
 [FileName,PathName] = uigetfile('*/.xlsx','dataset');
 cldata = xlsread([PathName FileName]);
 [nrow,ncol]=size(cldata);
@@ -9,9 +9,9 @@ cldata = xlsread([PathName FileName]);
 X = cldata(:, ncol-1);
 Y = cldata(:, ncol);
 
-%% the process
 % initialize results matrix as 'hasil' matrix
 hasil = zeros(10,6);
+
 % evaluate SVM based on polynomial kernel using 10-fold cross validation
 for q=1:10
     rng('default')
@@ -32,5 +32,5 @@ for q=1:10
     hasil(i,5)=F1_score*100; %F1-Score
 end
 
-%% print the output
+% print the output
 hasil
