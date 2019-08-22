@@ -9,7 +9,7 @@ cldata = xlsread([PathName FileName]);
 X = cldata(:, ncol-1);
 Y = cldata(:, ncol);
 
-%% process
+%% the process
 % initialize results matrix as 'hasil' matrix
 hasil = zeros(10,6);
 % evaluate SVM based on polynomial kernel using 10-fold cross validation
@@ -32,5 +32,5 @@ for q=1:10
     hasil(i,5)=F1_score*100; %F1-Score
 end
 
-%% print the output / results matrix
+%% print the output
 hasil
